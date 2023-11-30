@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ElearningController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 
@@ -14,6 +15,9 @@ use App\Http\Controllers\WebController;
 |
 */
 
+
+
+
 Route::get('/', [WebController::class, 'welcome']);
 Route::get('/profile', [WebController::class, 'profile']);
 Route::get('/visimisi', [WebController::class, 'visimisi']);
@@ -26,3 +30,4 @@ Route::get('/agenda', [WebController::class, 'agenda']);
 Route::get('/fasilitas', [WebController::class, 'fasilitas']);
 Route::get('/struktur', [WebController::class, 'struktur']);
 Route::get('/gallery', [WebController::class, 'gallery']);
+Route::get('/elearning', [ElearningController::class, 'index']);
