@@ -1,3 +1,67 @@
+**Tutorial Cloning Project Laravel Elearning**
+
+Tutorial ini akan menjelaskan cara menggunakan perintah `git clone` untuk mengunduh project Laravel elearning dari GitHub ke komputer Anda.
+
+**Persiapan**
+
+* Pastikan Anda telah menginstal Git di komputer Anda.
+* Buka terminal atau command prompt.
+* Navigasikan ke folder tempat Anda ingin menyimpan project Laravel elearning.
+
+**Langkah-langkah**
+
+1. Salin URL repositori GitHub project Laravel elearning.
+2. Jalankan perintah berikut untuk mengunduh project Laravel elearning:
+
+```
+git clone <url-repositori>
+```
+
+Di mana:
+
+* `<url-repositori>` adalah URL repositori GitHub project Laravel elearning.
+
+**Contoh**
+
+Berikut adalah contoh URL repositori GitHub project Laravel elearning:
+
+```
+https://github.com/[nama-pengguna]/project-laravel-elearning
+```
+
+Untuk mengunduh project Laravel elearning tersebut, Anda dapat menggunakan perintah berikut:
+
+```
+git clone https://github.com/[nama-pengguna]/project-laravel-elearning
+```
+
+**Kesimpulan**
+
+Demikianlah tutorial tentang cara menggunakan perintah `git clone` untuk mengunduh project Laravel elearning dari GitHub ke komputer Anda.
+
+**Troubleshooting**
+
+Jika Anda mengalami masalah saat mengunduh project Laravel elearning, Anda dapat memeriksa apakah Anda telah menginstal Git di komputer Anda dengan benar. Anda juga dapat memeriksa apakah Anda telah memasukkan URL repositori GitHub dengan benar.
+
+**Tambahan**
+
+Setelah Anda mengunduh project Laravel elearning, Anda dapat menjalankan perintah berikut untuk menginstal dependensi project:
+
+```
+composer install
+```
+
+Anda juga dapat menjalankan perintah berikut untuk memulai server Laravel:
+
+```
+php artisan serve
+```
+
+Sekarang, Anda dapat mengakses project Laravel elearning di browser Anda di alamat http://localhost:8000.
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
