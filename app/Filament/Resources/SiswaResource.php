@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SiswaResource\Pages;
-use App\Filament\Resources\SiswaResource\RelationManagers;
-use App\Models\Siswa;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Siswa;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\SiswaResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\SiswaResource\RelationManagers;
 
 class SiswaResource extends Resource
 {
@@ -23,24 +24,43 @@ class SiswaResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nis')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('gender')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('ttl')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('agama')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('alamat')
-                    ->required()
-                    ->maxLength(255),
+                Section::make('')
+                    ->description('')
+                    ->schema([
+                        Forms\Components\Select::make('kelas_id')
+                            ->relationship('kelas', 'nama')
+                            ->required(),
+                        Forms\Components\TextInput::make('nis')
+                            ->required()
+                            ->length(15),
+                        Forms\Components\TextInput::make('nama')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\Select::make('gender')
+                            ->options([
+                                'Laki-Laki' => 'Laki-Laki',
+                                'Perempuan' => 'Perempuan',
+                            ])
+                            ->required(),
+                        Forms\Components\DatePicker::make('ttl')
+                            ->required(),
+                        Forms\Components\Select::make('agama')
+                            ->options([
+                                'Islam' => 'Islam',
+                                'Katolik' => 'Katolik',
+                                'Protestan' => 'Protestan',
+                                'Budha' => 'Budha',
+                                'Kong Hu Cu' => 'Kong Hu Cu',
+                                'Hindu' => 'Hindu',
+                                'Lainnya' => 'Lainnya',
+                            ])
+                            ->required(),
+                        Forms\Components\TextInput::make('alamat')
+                            ->required()
+                            ->maxLength(255),
+                    ])
+                    ->columns(2),
+
             ]);
     }
 

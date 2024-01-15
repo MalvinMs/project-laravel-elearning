@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MataPelajaranResource\Pages;
-use App\Filament\Resources\MataPelajaranResource\RelationManagers;
-use App\Models\MataPelajaran;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\MataPelajaran;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\MataPelajaranResource\Pages;
+use App\Filament\Resources\MataPelajaranResource\RelationManagers;
 
 class MataPelajaranResource extends Resource
 {
@@ -23,12 +24,18 @@ class MataPelajaranResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('kode')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama')
-                    ->required()
-                    ->maxLength(255),
+                Section::make('Mata Pelajaran')
+                    ->description('')
+                    ->schema([
+                        Forms\Components\TextInput::make('kode')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('nama')
+                            ->required()
+                            ->maxLength(255),
+                    ])
+                    ->columns(2),
+
             ]);
     }
 
